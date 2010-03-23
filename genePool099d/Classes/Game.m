@@ -135,7 +135,7 @@
 
 - (void) tick: (ccTime)dt
 {
-	NSLog(@"...Tick...");
+	//NSLog(@"...Tick...");
 	//NSLog(@"game.Tick dt:%f",dt);
 	//CGPoint vel = [hud getJoystickVelocity];
     //CGPoint rot = [hud getJoystickAngle];
@@ -153,11 +153,11 @@
 	
 	currentTile = [tileLayer tileGIDAt:[self coordinatesAtPosition:[player position]]];
 	[self reactToTile:currentTile withEntity:player];
-	NSLog(@"game.tick tileID:%i",currentTile);
+	//NSLog(@"game.tick tileID:%i",currentTile);
 	
 	[self setViewpointCenter:[player position]];
 	CGPoint coord = [self coordinatesAtPosition:[player position]];
-    NSLog(@"game.tick.coordinates x:%f y:%f", coord.x, coord.y);
+    //NSLog(@"game.tick.coordinates x:%f y:%f", coord.x, coord.y);
 	
 }
 
@@ -208,11 +208,11 @@
 
 - (void) setViewpointCenter:(CGPoint)point
 {
-	NSLog(@"point x:%f y:%f",point.x, point.y);
+	//NSLog(@"point x:%f y:%f",point.x, point.y);
 	CGPoint localCenterPoint = ccp(240,160);
 	
 	viewPoint = ccpSub(localCenterPoint, point);
-	NSLog(@"viewPoint x:%f y:%f",viewPoint.x, viewPoint.y );
+	//NSLog(@"viewPoint x:%f y:%f",viewPoint.x, viewPoint.y );
 	
 	//NSLog(@"VIEWPOINT.X: %f  Y: %f", viewPoint.x, viewPoint.y);
 	
@@ -230,14 +230,14 @@
 	if(point.x > (([currentLevel backgroundTileMap].mapSize.width * [currentLevel backgroundTileMap].tileSize.width) - 240))
 	{
 		viewPoint.x = -(([currentLevel backgroundTileMap].mapSize.width * [currentLevel backgroundTileMap].tileSize.width) -480);
-		NSLog(@"VIEWPOINT.X: %f  Y: %f", viewPoint.x, viewPoint.y);
+		//NSLog(@"VIEWPOINT.X: %f  Y: %f", viewPoint.x, viewPoint.y);
 
 	}
 	
 	if(point.y > (([currentLevel backgroundTileMap].mapSize.height * [currentLevel backgroundTileMap].tileSize.height) - 160))
 	{
 		viewPoint.y = -(([currentLevel backgroundTileMap].mapSize.height * [currentLevel backgroundTileMap].tileSize.height) -320);
-		NSLog(@"VIEWPOINT.X: %f  Y: %f", viewPoint.x, viewPoint.y);
+		//NSLog(@"VIEWPOINT.X: %f  Y: %f", viewPoint.x, viewPoint.y);
 
 	}
 	
